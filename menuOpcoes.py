@@ -47,6 +47,9 @@ carros = {
 
 ''' print(pd.DataFrame(carros))''' #roubo, nao pode
 
+ #SESSAO ABAIXO DESTE COMENTARIO, ESTA SENDO DESIGNADA PARA ESTUDO, ME BASEANDO NESTE MENU PARA REALIZAR UM NOVO,
+ #COM MAIS FUNCIONALIDADES
+'''
 nomes_vinhos = ['Pergola', 'Sangue de Boi', 'Cantinho do Vale']
 precos_vinhos = [10, 20, 30]
 
@@ -129,5 +132,5 @@ else:
     print(f"\nValor total dos produtos: R${valor_total_itens:.2f}")
     print(f"Valor do frete: R${valor_frete:.2f}")
     print(f"O valor total a pagar sera de R${valor_final_comfrete:.2f} e sera entregue emm {endereco}")
-
+'''
 
