@@ -54,7 +54,7 @@ else:
 
 
  # codigo feito com ia, nao seja usado no projeto final, somente para estudo
-'''
+
 import sys # Usado para encerrar o programa
 
 # --- Funções de Utilitidade (já existentes e melhoradas) ---
@@ -104,7 +104,7 @@ def menor_valor(lista_valores, lista_nomes):
 def inicializacao():
     """Dá as boas-vindas, verifica a idade e coleta dados do usuário."""
     print("=============================================")
-    print(" BEM-VINDO À CONCESSIONÁRIA GEMINI'S CARS ")
+    print(" BEM-VINDO À CONCESSIONÁRIA DANILAO CARS ")
     print("=============================================")
     
     nome = input("Para começar, qual o seu nome? ")
@@ -310,4 +310,4 @@ def menu_principal():
 
 # Inicia o programa
 if __name__ == "__main__":
-    menu_principal()'''
+    menu_principal()
