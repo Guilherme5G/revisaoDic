@@ -12,6 +12,7 @@ print("==== CONCESSIONARIA DO DANILAO ====")
 ano_atual = 2025
 ano_nascimento = solicitar_entrada("Qual o seu ano de nascimento?")
 idade = ano_atual - ano_nascimento
+
 if idade < 18:
     print("Voce nao pode usufruir de uma concessionaria, volte quando for maior de idade.")
 else:
@@ -64,4 +65,57 @@ else:
                 for key in carros.keys():
                     print(f"{key}: {carros[key][indice_menor]}")
 
+        elif escolha_menu == 'cadastrar':
+            print("==== Cadastrar Novo Carro ====")
+            carros = cadastrar(carros)
+            print("Carro cadastrado com sucesso!")
+
         
+        elif escolha_menu == 'remover':
+            print("==== Remover Carro ====")
+            carros = remover(carros)
+            if carros['nomes']:
+                print("Carro removido com sucesso!")
+
+        elif escolha_menu == 'ver carrinho':
+            print("\n==== SEU CARRINHO ====")
+            if not carrinho:
+                print("Seu carrinho esta vazio.")
+            else:
+                print("Aqui estao os carros na sua compra:")
+                for item in carrinho:
+                    print(f"- {item['nome']} - Preco: R${item['preco']}")
+                print(f"\nValor total: R${valor_total_carros}")
+
+                if carrinho:
+                    finalizar = forca_opcao("Deseja finalizar a compra?", ['sim', 'nao'])
+                    if finalizar == 'sim':
+                        valor_frete = 1000
+                        if valor_total_carros >= 1000:
+                            valor_frete = 0
+
+                        valor_final = valor_frete + valor_total_carros
+
+                        print(f"\n--- RESUMO DO PEDIDO ---")
+                        print("Voce comprou: ")
+                        for item in carrinho:
+                            print(f"- {item['nome']} - R${item['preco']}")
+                        
+                        print(f"\nValor total dos carros: R${valor_total_carros}")
+                        print(f"Valor do frete: R${valor_frete}")
+                        print(f"Valor final: R${valor_final}")
+                        print(f"Sera entregue em: {endereco}")
+
+                        for item in carrinho:
+                            for item['nome'] in carros['nomes']:
+                                indice = achar_indice(carros['nomes'],item['nome'])
+                                for key in carros.keys():
+                                    carros[key].pop(indice)
+                        
+                        carrinho = []
+                        valor_total_carros = 0
+                        print("\nCompra finalizada com sucesso! Obrigado por comprar conosco.")
+
+        elif escolha_menu == 'sair':
+            print("Obrigado por visitar nossa concessionaria. Ate mais!")
+            break
